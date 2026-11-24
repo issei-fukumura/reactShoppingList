@@ -1,5 +1,6 @@
 import {useState} from "react";
 import ItemList from './ItemList'
+import ItemForm from "./ItemForm";
 
 function ShoppingList(){
     const [items ,setItems] = useState([
@@ -11,6 +12,7 @@ function ShoppingList(){
         <section>
             <h1>ShoppingList</h1>
             <ItemList items={items}/>
+            <ItemForm />
         </section>
     )
 };
