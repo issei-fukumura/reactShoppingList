@@ -5,7 +5,7 @@ const initialForm = { name: "", quantity: 1 };
 function ItemForm ({onAdd}){
     const [formData ,setFormData] = useState(initialForm)
 
-    const hundleChange = (e) => {
+    const handleChange = (e) => {
         const { name , value} = e.target
         setFormData((prev) => ({ ...prev, [name]: value }))
     }
@@ -25,14 +25,16 @@ function ItemForm ({onAdd}){
                 id="product" 
                 name="name" 
                 value={formData.name} 
-                onChange={hundleChange}>
+                onChange={handleChange}>
             </input>
             <label htmlFor="quantity">個数</label>
             <input 
+                type="number"
                 id="quantity" 
                 name="quantity" 
                 value={formData.quantity} 
-                onChange={hundleChange}>
+                onChange={handleChange}
+                min="1">
             </input>     
             <button>登録</button>
         </form>
